@@ -212,7 +212,7 @@ sumBelowTen = function(array){
   }return sum
 }
 
-/* #moreThanTenLetters
+/* 15. #moreThanTenLetters
  *
  * Takes in an array of strings and returns the amount of elements that have more than ten letters.
  *
@@ -220,8 +220,16 @@ sumBelowTen = function(array){
  * @return {Number}
  */
 var moreThanTenLetters;
+moreThanTenLetters = function(string){
+  var newStrArr = [];
+  for(var i =0; i<string.length; i++){
+    if (string[i].length > 10){
+      newStrArr.push(string[i]);
+    }
+  }return newStrArr.length;
+}
 
-/* #multiplyAll
+/* 16. #multiplyAll
  *
  * Takes in an array of numbers and returns the product of all elements.
  *
@@ -229,8 +237,14 @@ var moreThanTenLetters;
  * @return {Number}
  */
 var multiplyAll;
+multiplyAll = function(array){
+  var sum = 1;
+  for(var i =0; i<array.length; i++){
+    sum = sum * array[i];
+  }return sum;
+}
 
-/* #sumAllPositive
+/* 17. #sumAllPositive
  *
  * Takes in an array of numbers and returns the sum of all non-negative numbers.
  *
@@ -238,6 +252,14 @@ var multiplyAll;
  * @return {Number}
  */
 var sumAllPositive;
+sumAllPositive = function(string){
+  var sum = 0;
+  for(var i =0; i<string.length; i++){
+    if(string[i] > 0){
+      sum = sum + string[i];
+    }
+  }return sum;
+}
 
 /* #stringCountBelowThree
  *
@@ -465,9 +487,9 @@ module.exports = {
   splitString: splitString,
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
-  moreThanTenLetters: null,
-  multiplyAll: null,
-  sumAllPositive: null,
+  moreThanTenLetters: moreThanTenLetters,
+  multiplyAll: multiplyAll,
+  sumAllPositive: sumAllPositive,
   stringCountBelowThree: null,
   countObjects: null,
   getObjectKeys: null,
