@@ -167,7 +167,7 @@ poppedArray = function(array){
   return array;
 }
 
-/* #splitString
+/* 12. #splitString
  *
  * Takes in a string and returns an array of each individual character in the string.
  *
@@ -175,8 +175,13 @@ poppedArray = function(array){
  * @return {Array}
  */
 var splitString;
+splitString = function(string){
+  var theStr = 'abc';
+  var myArr = theStr.split('');
+  return myArr;
+}
 
-/* #lengthOfLast
+/* 13. #lengthOfLast
  *
  * Takes in an array of strings and returns the length of the last string.
  *
@@ -184,8 +189,13 @@ var splitString;
  * @return {Number}
  */
 var lengthOfLast;
+lengthOfLast = function(string){
+  var arrStr = ['a', 'ab', 'abc'];
+  var lastWord = arrStr.pop();
+  return lastWord.length;
+}
 
-/* #sumBelowTen
+/* 14. #sumBelowTen
  *
  * Takes in an array of numbers and returns the sum of all numbers below 10.
  *
@@ -193,6 +203,14 @@ var lengthOfLast;
  * @return {Number}
  */
 var sumBelowTen;
+sumBelowTen = function(array){
+  var sum = 0;
+  for(var i =0; i<array.length; i++){
+    if(array[i] < 10){
+      sum += array [i];
+    }
+  }return sum
+}
 
 /* #moreThanTenLetters
  *
@@ -444,9 +462,9 @@ module.exports = {
   objectSize: objectSize,
   createZeroFilledArray: createZeroFilledArray,
   poppedArray: poppedArray,
-  splitString: null,
-  lengthOfLast: null,
-  sumBelowTen: null,
+  splitString: splitString,
+  lengthOfLast: lengthOfLast,
+  sumBelowTen: sumBelowTen,
   moreThanTenLetters: null,
   multiplyAll: null,
   sumAllPositive: null,
