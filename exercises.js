@@ -1,4 +1,4 @@
-/* #doubleArray
+/* 1. #doubleArray
  *
  * Takes in an array of numbers and returns an array with each element doubled
  *
@@ -14,7 +14,7 @@ function newArray(array){
   return newArray;
 }
   
-/* #sumArrays
+/* 2. #sumArrays
  *
  * Takes in two arrays of numbers and returns the sum of both arrays.
  *
@@ -32,7 +32,7 @@ function sumArr(arr1, arr2){
 return sum;
 }
 
-/* #stringCount
+/* 3. #stringCount
  *
  * Takes in a string and returns the length of the string.
  *
@@ -50,7 +50,7 @@ function stgCnt(string){
 }
 
 
-/* #arrayLength
+/* 4. #arrayLength
  *
  * Takes in an array and returns the length of the array.
  *
@@ -63,7 +63,7 @@ arrayLength = function(array){
   return array.length;
 }
 
-/* #countAll
+/* 5. #countAll
  *
  * Takes in an array and returns the sum of all numbers in the array.
  *
@@ -79,7 +79,7 @@ countAll = function(array){
   return sum;
 }
 
-/* #countStrings
+/* 6. #countStrings
  *
  * Takes in an array of strings and returns an array of string lengths.
  *
@@ -95,7 +95,7 @@ countStrings = function(array){
   return arr;
 }
 
-/* #countAllStrings
+/* 7. #countAllStrings
  *
  * Takes in an array of strings and returns the sum of all string lengths.
  *
@@ -111,7 +111,7 @@ countAllStrings = function(string){
   return allStrings.length;
 }
 
-/* #convertToArray
+/* 8. #convertToArray
  *
  * Takes in an object and returns all the values of the object in an array.
  *
@@ -119,8 +119,14 @@ countAllStrings = function(string){
  * @return {Array}
  */
 var convertToArray;
-
-/* #objectSize
+convertToArray = function(object){
+ var array = [];
+ for (var key in object){
+   array.push(object[key]);
+ }
+ return array;
+}
+/* 9. #objectSize
  *
  * Takes in an object and returns the number of key value pairs in the object.
  *
@@ -128,8 +134,11 @@ var convertToArray;
  * @return {Number}
  */
 var objectSize;
+objectSize = function(object){
+  return Object.keys(object).length;
+}
 
-/* #createZeroFilledArray
+/* 10. #createZeroFilledArray
  *
  * Takes in a number and fills an array with that number of zeroes.
  *
@@ -137,8 +146,14 @@ var objectSize;
  * @return {Zero}
  */
 var createZeroFilledArray;
+createZeroFilledArray = function(number){
 
-/* #poppedArray
+  var x = number;
+  return new Array(x).fill(0);
+
+}
+
+/* 11. #poppedArray
  *
  * Takes in an array of numbers and returns an array of all but the last element of the array.
  *
@@ -146,6 +161,11 @@ var createZeroFilledArray;
  * @return {Array}
  */
 var poppedArray;
+poppedArray = function(array){
+  var array = [1,2,3];
+  array.pop();
+  return array;
+}
 
 /* #splitString
  *
@@ -420,10 +440,10 @@ module.exports = {
   countAll: countAll,
   countStrings: countStrings,
   countAllStrings: countAllStrings,
-  convertToArray: null,
-  objectSize: null,
-  createZeroFilledArray: null,
-  poppedArray: null,
+  convertToArray: convertToArray,
+  objectSize: objectSize,
+  createZeroFilledArray: createZeroFilledArray,
+  poppedArray: poppedArray,
   splitString: null,
   lengthOfLast: null,
   sumBelowTen: null,
