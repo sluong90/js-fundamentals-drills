@@ -261,7 +261,7 @@ sumAllPositive = function(string){
   }return sum;
 }
 
-/* #stringCountBelowThree
+/* 18. #stringCountBelowThree
  *
  * Takes in an array of strings and returns the amount of strings that have three characters or less.
  *
@@ -269,8 +269,16 @@ sumAllPositive = function(string){
  * @return {Number}
  */
 var stringCountBelowThree;
+stringCountBelowThree = function(array){
+  var strAmt = 0;
+  for(var i =0; i<array.length;i++){
+    if(array[i].length <= 3){
+      strAmt++;
+    }
+  }return strAmt;
+}
 
-/* #countObjects
+/* 19. #countObjects
  *
  * Takes in an array of objects and returns the amount of objects in the array.
  *
@@ -278,8 +286,12 @@ var stringCountBelowThree;
  * @return {Number}
  */
 var countObjects;
+countObjects = function(array){
+  for(var i = 0; i<array.length; i++){ 
+  }return array.length;
+}
 
-/* #getObjectKeys
+/* 20. #getObjectKeys
  *
  * Takes in an object and returns an array of all the object's keys.
  *
@@ -287,8 +299,11 @@ var countObjects;
  * @return {Array}
  */
 var getObjectKeys;
+getObjectKeys = function(object){
+  return Object.keys(object);
+}
 
-/* #getObjectValues
+/* 21. #getObjectValues
  *
  * Takes in an object and returns an array of all the object's values.
  *
@@ -296,6 +311,9 @@ var getObjectKeys;
  * @return {Array}
  */
 var getObjectValues;
+getObjectValues = function(object){
+  return Object.values(object);
+}
 
 /* #makeObject
  *
@@ -490,10 +508,10 @@ module.exports = {
   moreThanTenLetters: moreThanTenLetters,
   multiplyAll: multiplyAll,
   sumAllPositive: sumAllPositive,
-  stringCountBelowThree: null,
-  countObjects: null,
-  getObjectKeys: null,
-  getObjectValues: null,
+  stringCountBelowThree: stringCountBelowThree,
+  countObjects: countObjects,
+  getObjectKeys: getObjectKeys,
+  getObjectValues: getObjectValues,
   makeObject: null,
   makeObjectReverse: null,
   tupleToObject: null,
