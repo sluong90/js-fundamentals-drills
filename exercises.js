@@ -5,10 +5,10 @@
  * @param {Array} // [1,2,3]
  * @return {Array} // [2,4,6]
  */
-var doubleArray = function(arr){
-  var dblArr = []
-  for(var i =0; i<arr.length; i++){
-    dblArr.push(arr[i]*2);
+function doubleArray(arr){
+  var dblArr = [];
+  for(var i=0; i<arr.length; i++){
+    dblArr.push(arr[i] *2);
   }
   return dblArr;
 }
@@ -21,13 +21,13 @@ var doubleArray = function(arr){
  * @param {Array}
  * @return {Bool}
  */
-var sumArrays = function(arr1,arr2){
+function sumArrays(arr1, arr2){
   var sum = 0;
   var arr3 = arr1.concat(arr2);
-  for(var i =0; arr3.length; i++){
+  for(var i=0; i<arr3.length; i++){
     sum += arr3[i];
   }
-  return sum; 
+  return sum;
 }
 
 
@@ -39,10 +39,9 @@ var sumArrays = function(arr1,arr2){
  * @param {String}
  * @return {Number}
  */
-var stringCount = function(string){
+function stringCount(string){
   return string.length;
 }
-
 
 
 /* 4. #arrayLength
@@ -52,7 +51,7 @@ var stringCount = function(string){
  * @param {Array}
  * @return {Number}
  */
-var arrayLength = function(arr){
+function arrayLength(arr){
   return arr.length;
 }
 
@@ -66,14 +65,13 @@ var arrayLength = function(arr){
  * @param {Array}
  * @return {Number}
  */
-var countAll = function(arr){
-  var sum =0;
+function countAll(arr){
+  sum = 0;
   for(var i =0; i<arr.length; i++){
     sum += arr[i];
   }
   return sum;
 }
-
 
 /* 6. #countStrings
  *
@@ -82,12 +80,12 @@ var countAll = function(arr){
  * @param {Array}
  * @return {Array}
  */
-var countStrings = function(strArr){
-  var strLengthArr = [];
-  for(var i =0; i<strArr.length; i++){
-    strLengthArr.push(strArr[i].length);
+function countStrings(arr){
+  var stgLengthArr = [];
+  for(var i =0; i<arr.length; i++){
+    stgLengthArr.push(arr[i].length);
   }
-  return strLengthArr;
+  return stgLengthArr;
 }
 
 
@@ -98,9 +96,12 @@ var countStrings = function(strArr){
  * @param {String}
  * @return {Number}
  */
-var countAllStrings = function(strArr){
-  var allStr = strArr.join('');
-  return allStr.length;
+function countAllStrings(strArr){
+  sum = 0;
+  for(var i=0; i<strArr.length; i++){
+    sum += strArr[i].length;
+  }
+  return sum;
 }
 
 
@@ -111,8 +112,9 @@ var countAllStrings = function(strArr){
  * @param {Object}
  * @return {Array}
  */
-var convertToArray = function(obj){
+function convertToArray(obj){
   return Object.values(obj);
+
 }
 
 /* 9. #objectSize
@@ -122,7 +124,7 @@ var convertToArray = function(obj){
  * @param {Object}
  * @return {Number}
  */
-var objectSize = function(obj){
+function objectSize(obj){
   return Object.entries(obj).length;
 }
 
@@ -135,10 +137,9 @@ var objectSize = function(obj){
  * @param {Number}
  * @return {Zero}
  */
-var createZeroFilledArray = function(number){
-  return new Array(number).fill(0);
+function createZeroFilledArray(num){
+  return new Array(num).fill(0)
 }
-
 
 /* 11. #poppedArray
  *
@@ -147,7 +148,7 @@ var createZeroFilledArray = function(number){
  * @param {Array}
  * @return {Array}
  */
-var poppedArray = function(numArr){
+function poppedArray(numArr){
   numArr.pop();
   return numArr;
 }
@@ -160,8 +161,8 @@ var poppedArray = function(numArr){
  * @param {String}
  * @return {Array}
  */
-var splitString = function(string){
-  return string.split('');
+function splitString(string){
+  return string.split('')
 }
 
 
@@ -172,8 +173,8 @@ var splitString = function(string){
  * @param {String}
  * @return {Number}
  */
-var lengthOfLast = function(strArr){
-  var lastStr = strArr.pop();
+function lengthOfLast(strArr){
+  var lastStr = strArr.pop()
   return lastStr.length;
 }
 
@@ -184,14 +185,16 @@ var lengthOfLast = function(strArr){
  * @param {Array}
  * @return {Number}
  */
-var sumBelowTen = function(numArr){
-  var sum =0;
-  for(var i =0; i<numArr.length; i++){
-    if(numArr[i] < 10){
-      sum += numArr[i];
-    }
-  }return sum;
+function sumBelowTen(numArr){
+ var sum = 0;
+ for(var i=0; i<numArr.length; i++){
+   if(numArr[i] < 10){
+     sum += numArr[i];
+   }
+ } return sum;
 }
+
+
 /* 15. #moreThanTenLetters
  *
  * Takes in an array of strings and returns the amount of elements that have more than ten letters.
@@ -199,14 +202,15 @@ var sumBelowTen = function(numArr){
  * @param {String}
  * @return {Number}
  */
-var moreThanTenLetters = function(string){
+function moreThanTenLetters(strArr){
   var newArr = [];
-  for(var i =0; i<string.length; i++){
-    if(string[i].length >10){
-      newArr.push(string[i]);
-    }
+  for(var i=0; i<strArr.length; i++){
+    if(strArr[i].length > 10){
+      newArr.push(strArr[i]);
+  }
   }return newArr.length;
 }
+
 
 /* 16. #multiplyAll
  *
@@ -215,12 +219,12 @@ var moreThanTenLetters = function(string){
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll = function(numArr){
-  var product = 1;
-  for(var i =0; i<numArr.length; i++){
-    product *= numArr[i];
+function multiplyAll(numArr){
+  var prod = 1;
+  for(var i=0; i<numArr.length; i++){
+    prod *= numArr[i];
   }
-  return product;
+  return prod;
 }
 
 
@@ -231,9 +235,9 @@ var multiplyAll = function(numArr){
  * @param {String}
  * @return {Number}
  */
-var sumAllPositive = function(numArr){
+function sumAllPositive(numArr){
   var sum = 0;
-  for(var i =0; i<numArr.length; i++){
+  for(var i=0; i<numArr.length; i++){
     if(numArr[i] > 0){
       sum += numArr[i];
     }
@@ -248,14 +252,15 @@ var sumAllPositive = function(numArr){
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree = function(strArr){
+function stringCountBelowThree(strArr){
   var newArr = [];
-  for(var i =0; i<strArr.length; i++){
+  for(var i=0; i<strArr.length; i++){
     if(strArr[i].length <= 3){
       newArr.push(strArr[i]);
     }
   }return newArr.length;
 }
+
 
 
 /* 19. #countObjects
@@ -265,10 +270,9 @@ var stringCountBelowThree = function(strArr){
  * @param {Array}
  * @return {Number}
  */
-var countObjects = function(objArr){
-  return Object.entries(objArr).length;
+function countObjects(objArr){
+  return objArr.length;
 }
-
 
 /* 20. #getObjectKeys
  *
@@ -277,7 +281,7 @@ var countObjects = function(objArr){
  * @param {Object}
  * @return {Array}
  */
-var getObjectKeys = function(obj){
+function getObjectKeys(obj){
   return Object.keys(obj);
 }
 
@@ -288,7 +292,7 @@ var getObjectKeys = function(obj){
  * @param {Object}
  * @return {Array}
  */
-var getObjectValues = function(obj){
+function getObjectValues(obj){
   return Object.values(obj);
 }
 
@@ -300,9 +304,9 @@ var getObjectValues = function(obj){
  * @param {String}
  * @return {Object}
  */
-var makeObject = function(key,value){
+function makeObject(key,value){
   var obj = {};
-  obj[key] =value;
+  obj[key] = value;
   return obj;
 }
 
@@ -314,7 +318,7 @@ var makeObject = function(key,value){
  * @param {String}
  * @return {Bool}
  */
-var makeObjectReverse = function(value,key){
+function makeObjectReverse(value,key){
   var obj = {};
   obj[key] = value;
   return obj;
@@ -327,7 +331,7 @@ var makeObjectReverse = function(value,key){
  * @param {Array}
  * @return {Object}
  */
-var tupleToObject = function(arr){
+function tupleToObject(arr){
   var obj = {};
   obj[arr[0]] = arr[1];
   return obj;
@@ -340,9 +344,9 @@ var tupleToObject = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var tupleToObjectReverse = function(arr){
+function tupleToObjectReverse(tuple){
   var obj = {};
-  obj[arr[1]] = arr[0];
+  obj[tuple[1]] = tuple[0];
   return obj;
 }
 
@@ -354,13 +358,14 @@ var tupleToObjectReverse = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var strToKeys = function(arr){
+function strToKeys(strArr){
   var obj = {};
-  for(var i =0; i<arr.length; i++){
-    obj[arr[i]] = 0;
+  for(var i=0; i<strArr.length; i++){
+    obj[strArr[i]] = 0;
   }
   return obj;
 }
+
 
 /* 27. #getValues
  *
@@ -369,13 +374,10 @@ var strToKeys = function(arr){
  * @param {Object}
  * @return {Array}
  */
-var getValues = function(obj){
-  var arr = [];
-  for(key in obj){
-    arr.push(obj[key])
-  }
-  return arr;
+function getValues(obj){
+  return Object.values(obj);
 }
+
 
 /* 28. #getKeys
  *
@@ -384,14 +386,9 @@ var getValues = function(obj){
  * @param {Object}
  * @return {Array}
  */
-var getKeys = function(obj){
-  var arr = [];
-  for(key in obj){
-    arr.push(key)
-  }
-  return arr;
+function getKeys(obj){
+  return Object.keys(obj)
 }
-
 
 /* 29. #objectToArray
  *
@@ -401,18 +398,18 @@ var getKeys = function(obj){
  * @param {Object}
  * @return {Array}
  */
-var objectToArray = function(obj){
-  var arrTup = [];
-  var value = Object.values(obj)
-  for(var i =0; i<value.length; i++){
+function objectToArray(obj){
+  var tupleArr = [];
+  var objVal = Object.values(obj)
+  for(var i=0; i<objVal.length; i++){
     var newArr = [];
     newArr[0] = 0;
     newArr[1] = 1;
-    arrTup.push(newArr);
+    tupleArr.push(newArr)
   }
-  return arrTup;
+  return tupleArr;
 }
-
+ 
 /* 30. #arrayToObject
  *
  * takes in an array and returns an object with keys set to the elements in the array and
@@ -421,13 +418,12 @@ var objectToArray = function(obj){
  * @param {Array}
  * @return {Object}
  */
-var arrayToObject = function(arr){
+function arrayToObject(arr){
   var obj = {};
   for(var i=0; i<arr.length; i++){
-    var keys = arr[i];
-    obj[keys] = false;
-    }
-    return obj;
+    obj[arr[i]] = false;
+  }
+  return obj;
 }
 
 /* 31. #arraysToObject
@@ -439,7 +435,7 @@ var arrayToObject = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var arraysToObject = function(arr1,arr2){
+function arraysToObject(arr1,arr2){
   var obj = {};
   for(var i=0; i<arr1.length; i++){
     obj[arr1[i]] = arr2[i];
@@ -455,11 +451,11 @@ var arraysToObject = function(arr1,arr2){
  * @param {Object}
  * @return {Array}
  */
-var objectsToTuples = function(obj1,obj2){
+function objectsToTuples(obj1,obj2){
   var result = [];
   for(key in obj1){
     var arr1 = [];
-    arr1.push(key, obj1[key]);
+    arr1.push(key,obj1[key]);
     result.push(arr1);
   }
   for(key in obj2){
@@ -478,11 +474,10 @@ var objectsToTuples = function(obj1,obj2){
  * @param {Array}
  * @return {Object}
  */
-var mapArrayValues = function(arr){
+function mapArrayValues(strArr){
   var obj = {};
-  for(var i=0; i<arr.length; i++){
-    var keys = arr[i];
-    obj[keys] = true;
+  for(var i=0; i<strArr.length; i++){
+    obj[strArr[i]] = true;
   }
   return obj;
 }
@@ -496,13 +491,13 @@ var mapArrayValues = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var mapStringCounts = function(arr){
+function mapStringCounts(strArr){
   var obj = {};
-  for(var i=0; i<arr.length; i++){
-    if(arr[i].length >= 5){
-      obj[arr[i]] = true;
+  for(var i=0; i<strArr.length; i++){
+    if(strArr[i].length >= 5){
+      obj[strArr[i]] = true;
     }else{
-      obj[arr[i]] = false;
+      obj[strArr[i]] = false;
     }
   }return obj;
 }
@@ -515,10 +510,10 @@ var mapStringCounts = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var arrayToObjectNums = function(arr){
-  var obj= {};
-  for(var i =0; i<arr.length; i++){
-    obj[arr[i]] = true;
+function arrayToObjectNums(numArr){
+  var obj = {};
+  for(var i=0; i<numArr.length; i++){
+    obj[numArr[i]] = true;
   }
   return obj;
 }
@@ -531,14 +526,15 @@ var arrayToObjectNums = function(arr){
  * @param {String}
  * @return {Object}
  */
-var stringToKeys = function(string){
+function stringToKeys(string){
   var obj = {};
-  var letters = string.split('');
-  for(var i=0; i<letters.length; i++){
-    obj[letters[i]] = true;
+  var char = string.split('');
+  for(var i =0; i<char.length; i++){
+    obj[char[i]] = true;
   }
   return obj;
 }
+
 
 /* 37. #charCountMap
  *
@@ -548,10 +544,10 @@ var stringToKeys = function(string){
  * @param {Array}
  * @return {Object}
  */
-var charCountMap = function(arr){
+function charCountMap(strArr){
   var obj = {};
-  for(var i =0; i<arr.length; i++){
-    obj[arr[i]] = arr[i].length;
+  for(var i =0; i<strArr.length; i++){
+    obj[strArr[i]] = strArr[i].length;
   }
   return obj;
 }
@@ -563,10 +559,10 @@ var charCountMap = function(arr){
  * @param {String}
  * @return {Bool}
  */
-var frequencyMap = function(string){
+function frequencyMap(strArr){
   var obj = {};
-  for(var i=0; i<string.length; i++){
-    obj[string[i]] = (obj[string[i]] || 0) + 1;
+  for(var i=0; i<strArr.length; i++){
+  obj[strArr[i]] = (obj[strArr[i]] || 0) + 1;
   }
   return obj;
 }
@@ -579,14 +575,13 @@ var frequencyMap = function(string){
  * @param {String}
  * @return {Bool}
  */
-var tupleConvertToObject = function(strArr){
+function tupleConvertToObject(arr){
   var obj = {};
-  for(var i =0; i<strArr.length; i++){
-    obj[strArr[i][0]] = strArr[i][1];
-  }
+  for(var i=0; i<arr.length; i++){
+  obj[arr[i][0]] = arr[i][1];
+}
   return obj;
 }
-
 
 
 module.exports = {
